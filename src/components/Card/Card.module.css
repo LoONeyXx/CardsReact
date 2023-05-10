@@ -1,0 +1,72 @@
+.item {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scale .6s cubic-bezier(0.25, 0.46, 0.5, 1.5);
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.5);
+    }
+}
+
+
+.itemTitle {
+    text-align: center;
+    font-size: 24;
+}
+
+
+.price {
+    text-align: center;
+    margin: 5px 0 10px;
+}
+
+.image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-grow: 1;
+    height: 150px;
+    width: 100%;
+    border-radius: 2em 2em 0 0;
+    transition: transform .2s ease;
+    cursor: pointer;
+}
+
+
+.imageFullView {
+   transform:scale(1.2)
+}
+
+
+.button {
+    all: unset;
+    cursor: pointer;
+    width: 5em;
+    height: 1.3em;
+    padding: 5px;
+    border: 1px solid wheat;
+    border-radius: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: all ease .2s;
+}
+
+.button:hover {
+    background-color: wheat;
+    color: black;
+}
+
+.info {
+    flex-shrink: 2;
+    width: 100%;
+    border-radius: 0 0 2em 2em;
+    border-bottom: 1px solid rgba(245, 222, 179, 0.637);
+    padding-bottom: 5px;
+    padding-top: 5px;
+}

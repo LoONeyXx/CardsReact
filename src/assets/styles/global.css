@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body  {
+    background-color: rgb(37, 3, 3);
+    color: bisque;
+    margin: 0 auto;
+    padding:10px;
+    position: relative;
+}
+h1 {
+    text-align: center;
+}

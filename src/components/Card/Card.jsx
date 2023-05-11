@@ -1,39 +1,26 @@
 import React from "react";
 import styles from './Card.module.css'
 import { useState } from "react";
-
-const Card = ({ title, image, price, id }) => {
-
+import popupStyles from "../popup-full-image/PopupFullImage.module.css"
+const Card = ({ title, image, price, id, setPopup }) => {
     const [text, stateButton] = useState('Read more')
-    const [selector, stateImage] = useState(styles.image)
+
+
+
+
     function habdleClickImage(e) {
-        stateImage(prev => {
-            if (prev === styles.image) {
-                document.addEventListener('click', overlayClick)
-                return `${styles.image} ${styles.imageFullView}`
-            } else {
-                document.removeEventListener('click', overlayClick)
-                return styles.image
-            }
-        })
-    }
-
-
-    function overlayClick(e) {
-        if (e.target.style.backgroundImage !== `url("${image}")`) {
-            stateImage(styles.image)
-        }
+        setPopup({ selector: `${popupStyles.popup} ${popupStyles.popupOpened}`, title: title, image: image })
     }
 
     function handleClickButton(e) {
         stateButton(text === 'Read more' ? 'Soon' : 'Read more')
-        
+
 
     }
     return (
         <div key={id} className={styles.container}>
             <div className={styles.item}>
-                <div onClick={habdleClickImage} className={selector} style={{
+                <div onClick={habdleClickImage} className={styles.image} style={{
                     backgroundImage: `url('${image}')`,
                 }}></div>
                 <div className={styles.info}>

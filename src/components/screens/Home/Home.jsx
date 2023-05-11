@@ -2,7 +2,8 @@ import Card from '../../Card/Card'
 import styles from './Home.module.css'
 import CreateCardForm from '../../create-card-form/CreateCardForm'
 import { useState } from 'react'
-
+import popupStyles from '../../popup-full-image/PopupFullImage.module.css'
+import Popup from '../../popup-full-image/PopupFullImage'
 export const cardsData = [
     {
         id: 1,
@@ -38,22 +39,21 @@ export const cardsData = [
 
 const Home = () => {
 
-console.log(useState(''))
     const [cards, setCards] = useState(cardsData)
+    const [options, setPopup] = useState({ selector: popupStyles.popup, title: '', image: '', })
+
+
 
     return (
         <div className={styles.main}>
+            <Popup options={options} setPopup={setPopup} />
             <h1 className={styles.title}>Автомобили</h1>
-            <CreateCardForm setCards={setCards}/>
+            <CreateCardForm setCards={setCards} />
             <div className={styles.cardsContainer}>
-                {cards.map(card => <Card key={card.id} title={card.title} price={card.price} image={card.image} />)}
+                {cards.map(card => <Card key={card.id} title={card.title} price={card.price} image={card.image} setPopup={setPopup} />)}
             </div>
-
         </div>
-
-
     )
 }
-
 
 export default Home

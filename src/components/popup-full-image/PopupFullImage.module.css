@@ -1,0 +1,38 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.popupOpened {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+
+.image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 800px;
+    border-radius: 2em;
+    height: 450px;
+    max-height: 75vw;
+    max-width: 75vw;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 24px;
+}

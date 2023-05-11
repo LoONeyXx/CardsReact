@@ -6,6 +6,19 @@
     animation: scale .6s cubic-bezier(0.25, 0.46, 0.5, 1.5);
 }
 
+.image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-grow: 1;
+    height: 150px;
+    width: 100%;
+    border-radius: 2em 2em 0 0;
+    transition: transform .2s ease;
+    cursor: pointer;
+    border: 1px solid rgba(245, 222, 179, 0.637);
+    /* border-bottom:none; */
+}
 @keyframes scale {
     0% {
         transform: scale(0.5);
@@ -24,17 +37,6 @@
     margin: 5px 0 10px;
 }
 
-.image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    flex-grow: 1;
-    height: 150px;
-    width: 100%;
-    border-radius: 2em 2em 0 0;
-    transition: transform .2s ease;
-    cursor: pointer;
-}
 
 
 .imageFullView {
@@ -66,7 +68,9 @@
     flex-shrink: 2;
     width: 100%;
     border-radius: 0 0 2em 2em;
-    border-bottom: 1px solid rgba(245, 222, 179, 0.637);
+    border: 1px solid rgba(245, 222, 179, 0.637);
+    border-top:none;
+
     padding-bottom: 5px;
     padding-top: 5px;
 }

@@ -10,6 +10,7 @@ function CreateCardForm({ setCards }) {
     function addCar(e) {
         e.preventDefault()
         setCards(prev => [{ id: prev.length + 1, ...data }, ...prev])
+        setData({ title: '', price: '', image: '' })
     }
 
     function renderInputs(e, inputName) {
